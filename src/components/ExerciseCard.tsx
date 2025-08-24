@@ -18,15 +18,6 @@ const ExerciseCard: React.FC<ExerciseCardProps> = ({
   const [imageLoading, setImageLoading] = useState(true);
   const [imageError, setImageError] = useState(false);
 
-  // Şimdilik blob URL'leri temizlemiyoruz - sadece çalıştığından emin olalım
-  // useEffect(() => {
-  //   return () => {
-  //     if (exercise.imageUrl && exercise.imageUrl.startsWith('blob:')) {
-  //       URL.revokeObjectURL(exercise.imageUrl);
-  //     }
-  //   };
-  // }, [exercise.imageUrl]);
-
   const capitalizeFirst = (str: string) => {
     return str.charAt(0).toUpperCase() + str.slice(1);
   };

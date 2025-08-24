@@ -11,11 +11,6 @@ export interface Exercise {
   secondaryMuscles: string[];
 }
 
-export interface ExerciseFilters {
-  bodyPart: string;
-  searchQuery: string;
-}
-
 export interface SearchFormValues {
   query: string;
 }

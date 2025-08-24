@@ -129,8 +129,6 @@ const AppContent: React.FC = () => {
     setSelectedExercise(null);
   };
 
-
-
   const displayExercises = getDisplayExercises();
   const loading = isLoading();
   const error = getError();

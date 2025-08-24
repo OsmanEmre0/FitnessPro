@@ -20,10 +20,8 @@ export const exerciseApi = {
         params: { limit, offset }
       });
       
-      // gifUrl zaten response'da mevcut, ekstra istek gerekmez
       return response.data;
     } catch (error) {
-      console.error('API Error:', error);
       throw new Error('Egzersizler yüklenirken hata oluştu');
     }
   },
@@ -34,10 +32,8 @@ export const exerciseApi = {
         params: { limit }
       });
       
-      // gifUrl zaten response'da mevcut, ekstra istek gerekmez
       return response.data;
     } catch (error) {
-      console.error('API Error:', error);
       throw new Error('Kas grubu egzersizleri yüklenirken hata oluştu');
     }
   },
@@ -48,10 +44,8 @@ export const exerciseApi = {
         params: { limit }
       });
       
-      // gifUrl zaten response'da mevcut, ekstra istek gerekmez
       return response.data;
     } catch (error) {
-      console.error('API Error:', error);
       throw new Error('Arama sonuçları yüklenirken hata oluştu');
     }
   },
@@ -61,56 +55,7 @@ export const exerciseApi = {
       const response = await api.get('/exercises/bodyPartList');
       return response.data;
     } catch (error) {
-      console.error('API Error:', error);
       throw new Error('Kas grupları yüklenirken hata oluştu');
-    }
-  },
-
-  getTargetList: async (): Promise<string[]> => {
-    try {
-      const response = await api.get('/exercises/targetList');
-      return response.data;
-    } catch (error) {
-      console.error('API Error:', error);
-      throw new Error('Hedef kaslar yüklenirken hata oluştu');
-    }
-  },
-
-  getEquipmentList: async (): Promise<string[]> => {
-    try {
-      const response = await api.get('/exercises/equipmentList');
-      return response.data;
-    } catch (error) {
-      console.error('API Error:', error);
-      throw new Error('Ekipmanlar yüklenirken hata oluştu');
-    }
-  },
-
-  getExercisesByTarget: async (target: string, limit: number = 50): Promise<Exercise[]> => {
-    try {
-      const response = await api.get(`/exercises/target/${target}`, {
-        params: { limit }
-      });
-      
-      // gifUrl zaten response'da mevcut, ekstra istek gerekmez
-      return response.data;
-    } catch (error) {
-      console.error('API Error:', error);
-      throw new Error('Hedef kas egzersizleri yüklenirken hata oluştu');
-    }
-  },
-
-  getExercisesByEquipment: async (equipment: string, limit: number = 50): Promise<Exercise[]> => {
-    try {
-      const response = await api.get(`/exercises/equipment/${equipment}`, {
-        params: { limit }
-      });
-      
-      // gifUrl zaten response'da mevcut, ekstra istek gerekmez
-      return response.data;
-    } catch (error) {
-      console.error('API Error:', error);
-      throw new Error('Ekipman egzersizleri yüklenirken hata oluştu');
     }
   },
 
@@ -133,7 +78,6 @@ export const exerciseApi = {
       
       return '';
     } catch (error) {
-      console.error('Image API Error:', error);
       return '';
     }
   },

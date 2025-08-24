@@ -4,30 +4,25 @@ import { Exercise } from '../types/exercise';
 
 // Egzersizlere resim URL'lerini ekleyen yardımcı fonksiyon
 const addImagesToExercises = async (exercises: Exercise[]): Promise<Exercise[]> => {
-  console.log('Adding images to exercises:', exercises.length);
-  
   const exercisesWithImages = await Promise.all(
     exercises.map(async (exercise) => {
       try {
-        console.log(`Fetching image for exercise ID: ${exercise.id}`);
         const imageUrl = await exerciseApi.getExerciseImage(exercise.id);
-        console.log(`Image URL for exercise ${exercise.id}:`, imageUrl);
         
         return {
           ...exercise,
           imageUrl: imageUrl || exercise.gifUrl // Eğer imageUrl yoksa gifUrl'e fallback
         };
       } catch (error) {
-        console.error(`Error fetching image for exercise ${exercise.id}:`, error);
+        // Hata durumunda gifUrl'e fallback
         return {
           ...exercise,
-          imageUrl: exercise.gifUrl // Hata durumunda gifUrl'e fallback
+          imageUrl: exercise.gifUrl
         };
       }
     })
   );
   
-  console.log('Exercises with images:', exercisesWithImages.length);
   return exercisesWithImages;
 };
 
