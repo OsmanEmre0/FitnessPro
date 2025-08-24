@@ -51,7 +51,7 @@ const SearchForm: React.FC<SearchFormProps> = ({
                 type="text"
                 name="query"
                 placeholder="Egzersiz ara..."
-                className={`w-full pl-10 sm:pl-12 pr-20 sm:pr-24 py-3 sm:py-4 text-base sm:text-lg border-2 rounded-xl sm:rounded-2xl transition-all duration-300 focus:outline-none focus:scale-105 shadow-lg ${
+                className={`w-full pl-10 sm:pl-12 pr-16 sm:pr-24 py-3 sm:py-4 text-base sm:text-lg border-2 rounded-xl sm:rounded-2xl transition-all duration-300 focus:outline-none focus:scale-105 shadow-lg ${
                   errors.query && touched.query
                     ? 'border-red-400 bg-red-50 focus:border-red-500'
                     : 'border-slate-200 bg-white focus:border-purple-500 focus:shadow-purple-200'
@@ -73,7 +73,7 @@ const SearchForm: React.FC<SearchFormProps> = ({
                       inputRef.current?.focus();
                     }, 100);
                   }}
-                  className="absolute right-20 sm:right-24 top-1/2 transform -translate-y-1/2 p-1.5 bg-slate-200 hover:bg-slate-300 text-slate-600 rounded-lg transition-all duration-200 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-slate-300"
+                  className="absolute right-16 sm:right-24 top-1/2 transform -translate-y-1/2 p-1.5 bg-slate-200 hover:bg-slate-300 text-slate-600 rounded-lg transition-all duration-200 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-slate-300"
                   title="Aramayı temizle"
                 >
                   <X className="w-4 h-4" />

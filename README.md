@@ -370,6 +370,7 @@ npm run build
 ```
 
 ### Deployment Options
+- **Netlify**: Static site hosting (önerilen)
 - **Vercel**: Zero-config deployment
 - **Netlify**: Static site hosting
 - **GitHub Pages**: Free hosting
